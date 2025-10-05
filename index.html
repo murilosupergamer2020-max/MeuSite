@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Minha página</title>
+    </head>
+    <body style="background-color: rgb(215, 255, 255);">
+        <h1 id = "titulo">Minha primeira página</h1>
+        <p>estou iniciando em <strong>html</strong></p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHoN3hiT_KTUG0QsBz3enF5nmKS7IzGbQGw&s" alt="fonte: google">
+        
+        <p>meu canal:<br><a href="https://www.youtube.com/@framecraft_stopmotion">brickyplay</a></p>
+        <button onclick= mudarFundo() id="botão">mudar fundo</button>
+        <canvas id="Canvas" width="500" height="500" style="border:5px solid rgb(0, 88, 22); background-color: rgb(117, 248, 150);"></canvas>
+        <script>
+            function mudarFundo() {
+                document.body.style.backgroundColor = "yellow";
+                document.getElementById("botão").onclick = mudarTitulo;
+                document.getElementById("botão").innerText = "Mudar título";
+            }
+            function mudarTitulo() {
+                document.getElementById("titulo").innerText = "Titulo mudado";
+            }
+             //canvas//
+            let canvas = document.getElementById("Canvas");
+            let ctx =canvas.getContext("2d");
+            let x = 225;
+            let y = 225;
+            let vel = 5;
+            let tecla = {};
+            let tempo = 0;
+            let barra_dash = 50;
+
+            document.addEventListener("keydown", function(event){
+                tecla[event.key] = true;
+            })
+            document.addEventListener("keyup", function(event){
+                tecla[event.key] = false;
+            })
+            function loop() {
+                if(tecla[" "] && tempo == 0){
+                    console.log(Date.now())
+                    vel = 20;
+                    tempo = Date.now();
+                    console.log("Dash");
+                }
+                if(Date.now() >= tempo + 100){
+                    vel = 5;
+                    console.log("Fim do Dash");
+                if(Date.now() >= tempo + 1000){
+                    tempo = 0;
+                }
+                }
+                if(tecla["w"]){
+                    y -= vel;
+                }
+                if(tecla["s"]){
+                    y += vel;
+                }
+                if(tecla["a"]){
+                    x -= vel;
+                }
+                if(tecla["d"]){
+                    x += vel;
+                }
+                if(x < 0) x = 0;
+                if(x > 450) x = 450;
+                if(y > 450) y = 450;
+                if(y < 0) y = 0;                            
+                ctx.clearRect(0,0,500,500);
+                ctx.fillStyle= "Blue";
+                ctx.fillRect(x, y, 50, 50);
+
+                ctx.fillStyle='rgb(0, 88, 22)';
+                ctx.font = "25px Arial";
+                ctx.fillText("dash:", 375, 40);
+                ctx.fillRect(440, 10, barra_dash, 50)
+
+                requestAnimationFrame(loop)
+            }
+            loop()
+                
+        </script>
+    </body>
+</html>

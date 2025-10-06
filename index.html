@@ -5,14 +5,17 @@
         <title>Minha página</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body style="background-color: rgb(215, 255, 255);">
-        <h1 id = "titulo" style="font-family: sans-serif;">Minha primeira página</h1>
+    <body>
+        <header>
+            <h1 id = "titulo" style="font-family: sans-serif;">Minha primeira página</h1>
+        </header>
+        
         <p>estou iniciando em <strong>html</strong></p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHoN3hiT_KTUG0QsBz3enF5nmKS7IzGbQGw&s" alt="fonte: google">
+        <img src="https://img.elo7.com.br/product/zoom/3999E15/100-3d-arquivo-de-corte-controle-video-game-em-camada-arquivo-digital.jpg" alt="fonte: google" height="200px" width=auto>
         
         <p>meu canal:<br><a href="https://www.youtube.com/@framecraft_stopmotion">brickyplay</a></p>
-        <button onclick= mudarFundo() id="botão">mudar fundo</button>
-        <canvas id="Canvas" width="500" height="500" style="border:5px solid rgb(0, 88, 22); background-color: rgb(117, 248, 150);"></canvas>
+        <button onclick= inicio() id="botão">iniciar jogo</button>
+        <canvas id="Canvas" width="500" height="500" ></canvas>
         <script src="script.js"></script>
     </body>
 </html>

@@ -1,8 +1,19 @@
+header {
+    color:white;
+    background-image: linear-gradient(to right, rgb(245, 181, 97), rgb(255, 97, 97));
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    border: 3px solid black;
+    
+}
 body {
-    font-family: Aril sans-serif;
+    font-family: Arial sans-serif;
+    background-image: linear-gradient(45deg, rgb(0, 17, 255), rgb(0, 255, 115));
 }
 h1 {
     text-align: center;
+
 }
 p {
     text-align: center;
@@ -10,24 +21,35 @@ p {
 }
 img {
     border: 5px  solid black;
+    
 }
 img:hover{
     border-radius: 10px;
     border: 5px solid grey;
+
 }
 a:hover{
     color: red;
     text-decoration: none;
 }
 button{
-    background-color: aqua;
-    color: blue;
+    background-image: linear-gradient(to left, rgb(117, 248, 150), rgb(135, 180, 146));
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border: 3px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px
 }
 button:hover{
-    background-color: blue;
-    color:aqua;
+    transition: ease-in-out 0.3s;
+    background-image: linear-gradient(to right, rgb(117, 248, 150), rgb(135, 180, 146));
 }
 canvas{
     border-radius: 20px;
-
+    border:5px solid rgb(0, 88, 22);
+    background-image: linear-gradient(to right, rgb(117, 248, 150), rgb(135, 180, 146));
+    display: block;
+    margin: auto;
 }
